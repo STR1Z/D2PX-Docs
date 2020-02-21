@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <img src="../d2px.png" />
+    <h1>Entity</h1>
+
+    <p>
+      Learn how to exploit the full potential of the entity object.
+    </p>
+    
+    <h2>All the available options</h2>
+    <h3>
+        children, id, class, props
+    </h3>
+    <p>
+        children: Array of Enities that you want to render inside the scene. <br><br>
+        id: The id of the entity.<br><br>
+        class: The class of the entity.<br><br>
+        props: The suggested place to put your entities custom properties.
+
+
+    </p>
+    <div>
+        let myEntity = new Entity({children: [mySubEntity], id: "BestEntity", class: "OfAllTime", props: {speed: "300"}})
+    </div>
+    <p>
+        Don't forget to deconstruct D2PX before using the Entity. Otherwise use D2PXEntity.
+    </p>
+    <h3>size, position</h3>
+    <p>
+        size: The size of your entity.<br><br>
+        position: The position of your entity.
+    </p>
+    <div>
+        let myEntity = new Entity({position: [10,10], size: [10,10]})
+
+    </div>
+   
+
+    <h2>sprite, bounds</h2>
+    <p>
+        sprite: The object that will render your image, text or rectangle.<br><br>
+        bounds: The object that will handle collision detection.
+    </p>
+
+    <h2>onupdate, onrender, oninit, onanimate</h2>
+    <p>
+        The function that will be called when the respective event happens.
+    </p>
+
+    <div>
+        let myEntity = new Entity({onupdate: () => {console.log("updating")}})
+    </div>
+   
+    <p>
+        Each time myEntity updates, it will log "updating" in the console. Don't forget to pass a parameter if you want to modify the entity.
+    </p>
+
+    <h2>
+        Some useful methods
+    </h2>
+
+    <h3>collide</h3>
+    <p>
+        collide: Checks if the boundary of entity collides with a certain category of boundary. Returns a boolean.
+    </p>
+
+    <div>
+        myEntity.collide("categoryName")
+    </div>
+    <h3>move</h3>
+    <p>
+        move: Moves the entity by respecting all the collision boundaries of the category "solid"
+    </p>
+
+    <div>
+        myEntity.move(xVelocity, yVelocity)
+    </div>
+
+    <h3>setAnimation, initAnimations</h3>
+    <p>
+        setAnimation: Changes the animations of the sprite of the entity. <br><br>
+        initAnimations: To prepare your images for animation.
+    </p>
+    <div>
+        myEntity.initAnimations() <br>
+        myEntity.setAnimations("yourAnimationId")
+    </div>
+
+    <h2>Class static functions</h2>
+
+    <h3>newModel, model</h3>
+    <p>
+        newModel: To make a model from an option, the same you put inside the entity.
+        model: To use the made model.
+    </p>
+    <div>
+        Entity.newModel("myModel", {color: "blue", position: [10,10]})
+        let myNewEntity = Entity.model("myModel", {position: [20,20]})
+    </div>
+    <p>
+        Take in note that a new model can't pass functions. As you can see, while creating an entity from the model, you can change some of the models options. In this case, the position was changed.
+    </p>
+
+    <!-- <h2>
+        <a href="scene.html">Next : Scenes</a>
+    </h2> -->
+    <p>
+        Other: <a href="game.html">Game</a>, <a href="scene.html">Scene</a>, <a href="entity.html">Entity</a>
+    </p>
+
+    <p>
+        View: <a href="../content.html">Contents</a>
+    </p>
+   
+   
+  </body>
+  <script src="../index.js"></script>
+    
+</body>
+</html>

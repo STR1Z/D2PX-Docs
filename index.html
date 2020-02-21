@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D2PX Documentation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img src="d2px.png" />
+    <h1>What is D2PX?</h1>
+    <p>
+      D2PX is a game library specialized in making 2D pixelated games with efficiency and ease.
+    </p>
+    <h2>Structure</h2>
+    <p>
+      Its structure is relatively simple. Each D2PX game contains a Game object which renders a scene. The scene itself contains entities. The
+      entseities may as well contain other entities, but they will always contain a bound object and a sprite object.
+    </p>
+    <h2>Relative positioning</h2>
+    <p>
+      All entities will hative pos relativeition to their parents during the initialization to simplify sub-component movements.
+    </p>
+    <h1>All the object types</h1>
+    <p>
+      This game engine is indeed object oriented. Therefore, it contains a large variety of objects all having a very important role in this code
+      ecosystem.
+    </p>
+    <h2>Game</h2>
+    <p>
+      The game object is the object that will run your game. More precisely, it's the instance that will render and update the selected scene at a
+      certain framerate.
+    </p>
+    <h2>Scene</h2>
+    <p>The scene object is the object that will render and update your entities. It will also be the one holding the camera object.</p>
+    <h2>Entity</h2>
+    <p>
+      The entity object contains its sub-entities along with its own sprite (aka graphics). Only entities can contain boudaries for rectangular
+      collision detection.
+    </p>
+    <h2>Sprite</h2>
+    <p>
+      The Sprite object is the one that will render the graphics for your entity. It can only render rectangular shapes, text and images of your
+      choice.
+    </p>
+    <h2>
+      Bounds
+    </h2>
+    <p>
+      The bounds object is responsible for the collision of your entity.
+    </p>
+    <h2>Vector</h2>
+    <p>Everything related to position and size will be stored inside a Vector object.</p>
+    <h2>Camera</h2>
+    <p>This object is responsible for moving the players view.</p>
+
+    <p>
+      View: <a href="content.html">Contents</a>
+  </p>
+    
+</html>

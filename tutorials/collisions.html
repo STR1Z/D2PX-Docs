@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <img src="../d2px.png" />
+    <h1>Collision detection</h1>
+
+    <p>
+      Our objective will be to code a moveable entity with a collision detection. To do so, we will be using the code from the previous tutorial.
+    </p>
+    
+    <h2>Rewind time</h2>
+    <div>
+        Keyboard.init()
+      let mySquare = new Entity({src: "myImage.png" onupdate: (e) => { <br /><br />
+        &emsp; if ( Keyboard.name("UP")) e.move(0, -1)<br />&emsp; if ( Keyboard.name("DOWN")) e.move(0,1) <br />
+        &emsp; if ( Keyboard.name("LEFT")) e.move(-1, 0)<br />&emsp; if ( Keyboard.name("RIGHT")) e.move(1,0) <br />
+        &emsp; if ( e.collide("solid")) console.log("colision detected") <br /><br />}})
+
+    </div>
+    <p>
+        To be able to detect collisions, remove the category from the obstacle entity. And you are done. More documentation on some methods and constructors will soon be available.
+    </p>
+
+    <p>
+      Other: <a href="introduction.html">Introduction</a>, <a href="images.html">Images</a>, <a href="bounds.html">Bounds</a>,<a href="collisions.html">Collisions</a> 
+    </p>
+
+    <p>
+      View: <a href="../content.html">Contents</a>
+    </p>
+   
+   
+  </body>
+  <script src="../index.js"></script>
+    
+</body>
+</html>

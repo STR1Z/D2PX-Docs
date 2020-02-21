@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <img src="../d2px.png" />
+    <h1>Game</h1>
+
+    <p>
+      Learn how to exploit the full potential of the game object.
+    </p>
+    
+    <h2>All the available options</h2>
+    <h3>
+        fps, ups, aps and ops
+    </h3>
+    <p>
+        That's right, you can choose the frames per second (fps), the updates per second (ups), the sprite animations per second (aps) and finally the optimizations per second (ops).
+        More information on aps and ops coming right up.
+    </p>
+    <div>
+        let mySpecialGame = new Game({fps: 30, ups: 30, aps: 5, ops: 2})
+    </div>
+    <p>
+        Don't forget to deconstruct D2PX!
+    </p>
+    <h3>optimize</h3>
+    <p>A true or false option which toggles the optimization of the game. It makes the game run around 5 to 10 times faster. It is on by default.</p>
+    <div>
+        let mySpecialGame = new Game({optimize: true})
+    </div>
+    <h3>
+        onrender, onupdate, onplay, onanimate, onoptimize, onpause
+    </h3>
+    <p>
+        Is called when the respective event happens. The value will the a function, therefore we call it a callback function.
+    </p>
+    <div>
+        let myGame = new Game({onplay: (e) => {console.log("The game has started")}})
+    </div>
+    <h3>
+        canvas
+    </h3>
+    <p>
+        Only use it if you want to make a custom canvas. 
+    </p>
+
+    <div>
+        let myCustomCanvasGame = new Game({canvas: myHTMLCanvas})
+    </div>
+
+    <h2>All methods</h2>
+    <h3>update, render, animate, optimize</h3>
+    <p>Call it if only you want to force its execution.</p>
+    <h3>play, pause</h3>
+    <p>play starts the game and pause stops the game from rendering, updating, animating and optimizing</p>
+    <div>
+        myGame.play() <br>
+        myGame.pause()
+    </div>
+    <h3>setScene, setGui</h3>
+    <p>Set scene selects the scene that you want to update, render, animate, and optimize. Same goes for the setGui, but for the GUI object.</p>
+    <div>myGame.setScene(myScene)</div>
+    <h3>playScene, pauseScene</h3>
+    <p>pauseScene only stops the updating of the selected scene. playScene resumes it.</p>
+    <div>myGame.pauseScene()<br>myGame.playScene()</div>
+    <h2>
+        Next: <a href="scene.html">Scene</a>
+    </h2>
+    <p>
+        Other: <a href="game.html">Game</a>, <a href="scene.html">Scene</a>, <a href="entity.html">Entity</a>
+    </p>
+
+    <p>
+        View: <a href="../content.html">Contents</a>
+    </p>
+    
+   
+  </body>
+  <script src="../index.js"></script>
+    
+</body>
+</html>

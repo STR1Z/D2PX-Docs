@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <img src="../d2px.png" />
+    <h1>Scene</h1>
+
+    <p>
+      Learn how to exploit the full potential of the scene object.
+    </p>
+    
+    <h2>All the available options</h2>
+    <h3>
+        children, range, camera
+    </h3>
+    <p>
+        children: Array of Enities that you want to render inside the scene. <br><br>
+        range: The entities within the range will get updated. Only useful if the game's optimization option is on.<br><br>
+        camera: The camera of the scene.
+
+
+    </p>
+    <div>
+        let myScene = new Scene({children: [myEntity, myTree], range: 1000, camera: myCamera})
+    </div>
+    <p>
+        Don't forget to deconstruct D2PX before using the Scene. Otherwise use D2PXScene.
+    </p>
+   
+
+    <h2>Some useful properties</h2>
+    <h3>actif, sleeping</h3>
+    <p>
+        actif: stores an array of the updating entities inside the scene. <br><br>
+        sleeping: stores an array of sleeping entities or rather inactif entities.
+    </p>
+    <h3>ids, classes</h3>
+    <p>
+        ids: Stores all the entities and sub-entities inside the scene with a specified id. Returns one entity upon search <br><br>
+        classes: Stores all the entities and sub-entities inside the scene with a specified class. Returns an array of entities.
+    </p>
+    <div>
+        let myEntity = myScene.ids["yourIdName"] <br>
+        let myEntities = myScene.classes["yourClassName"]
+    </div>
+    <h3>bounds</h3>
+    <p>Stores all categories of bounds inside an array.</p>
+
+    <h2>
+        Next: <a href="entity.html">Entity</a>
+    </h2>
+    <p>
+        Other: <a href="game.html">Game</a>, <a href="scene.html">Scene</a>, <a href="entity.html">Entity</a>
+    </p>
+
+    <p>
+        View: <a href="../content.html">Contents</a>
+    </p>
+    
+    
+   
+   
+  </body>
+  <script src="../index.js"></script>
+    
+</body>
+</html>

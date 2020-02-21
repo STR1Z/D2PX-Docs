@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <img src="../d2px.png" />
+    <h1>Bounds</h1>
+
+    <p>
+      Our objective will be to code a moveable entity will a collision hitbox.
+    </p>
+    <h2>Destructuring the D2PX object.</h2>
+    <div>let { Game, Scene, Entity, Keyboard } = D2PX</div>
+    <p>
+      Always remember to destructure otherwise, you wouldn't be able to access some constructors.
+    </p>
+    <h2>Creating a Game instance</h2>
+    <div>
+      let myGame = new Game({height: 300})
+    </div>
+    <p>
+      The height is for the amount of pixels you want along your y-axis.
+    </p>
+    <h2>Creating an entity</h2>
+    <div>
+        Keyboard.init()
+      let mySquare = new Entity({src: "myImage.png" onupdate: (e) => { <br /><br />
+        &emsp; if ( Keyboard.name("UP")) e.move(0, -1)<br />&emsp; if ( Keyboard.name("DOWN")) e.move(0,1) <br />
+        &emsp; if ( Keyboard.name("LEFT")) e.move(-1, 0)<br />&emsp; if ( Keyboard.name("RIGHT")) e.move(1,0) <br /><br />}})
+    </div>
+    <p>
+      Atleast the writer did not feel lazy this time.
+    </p>
+    <h2>Creating the obstacle</h2>
+    <div>
+        let myObstacle = new Entity({size: [20,20], color: "red", bounds: { size: [20,20], category: "solid"}})
+    </div>
+    <p>
+        Just add the bounds property to your entity with the size and the solid category so the built-in move will block on collision. As you can see, the bound is 20 by 20.
+    </p>
+    <div>
+      let myScene = new Scene({children: [mySquare, myObstacle]})
+    </div>
+    <p>Put both entities inside the array.</p>
+    <h2>
+      Adding the scene to the game instance
+    </h2>
+    <div>
+      myGame.setScene(myScene)
+    </div>
+    <p>
+      Adding it to the game.
+    </p>
+    <h2>Start the game</h2>
+    <div>
+      myGame.play()
+    </div>
+
+    <h2>
+      Next: <a href="collisions.html">Collisions</a>
+  </h2>
+
+  <p>
+    Other: <a href="introduction.html">Introduction</a>, <a href="images.html">Images</a>, <a href="bounds.html">Bounds</a>,<a href="collisions.html">Collisions</a> 
+  </p>
+
+    <p>
+      View: <a href="../content.html">Contents</a>
+    </p>
+   
+  </body>
+  <script src="../index.js"></script>
+    
+</body>
+</html>

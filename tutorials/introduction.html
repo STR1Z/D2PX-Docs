@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <img src="../d2px.png" />
+    <h1>Introduction</h1>
+
+    <p>
+      Our objective will be to code a moveable square on the screen to understand how to create an Entity.
+    </p>
+    <h2>Destructuring the D2PX object.</h2>
+    <div>let { Game, Scene, Entity, Keyboard } = D2PX</div>
+    <p>
+      By doing this, you can access all of D2PX without writing D2PX each time when you use a D2PX object. Keep in mind to destructure only the things you need.
+    </p>
+    <h2>Creating a Game instance</h2>
+    <div>
+      let myGame = new Game({height: 300})
+    </div>
+    <p>
+      cereated wascarefully Congratulations! You just made a game instance. That easy! Look attentively at the curly braces highlighted in red. This
+      is where you put your options in whatever order unlike parameters. If you observe the options, you can see that the height of the game is 300
+      pixels. Feel free to change the height of the view.
+    </p>
+    <h2>Creating an entity</h2>
+    <div>
+      let mySquare = new Entity({size: [20,20], color: "limegreen"})
+    </div>
+    <p>
+      The position will be a mathematical vector in 2d. Howerver, right now, this is stored in an array. Don't worry the entity constructor will magically parse it into a Vector object.
+    </p>
+    <h2>
+      Adding the movements
+    </h2>
+    <div>
+      Keyboard.init()<br />
+      <br />mySquare.onupdate = (e) => { <br /><br />
+      &emsp; if ( Keyboard.name("UP")) e.move(0, -1)<br />&emsp; if ( Keyboard.name("DOWN")) e.move(0,1) <br />
+      &emsp; if ( Keyboard.name("LEFT")) e.move(-1, 0)<br />&emsp; if ( Keyboard.name("RIGHT")) e.move(1,0) <br /><br />}
+    </div>
+    <p>
+      Keyboard is the object that will be responsible for listenning to your keyboard events. The name() method is used to check if the key with the
+      inputed name into the parameter is down. If yes it returns true, else false. The onupdate will be called everytime the entity updates.
+      Keyboard.init() will initiate the object to start listenning to the keyboard events. There is also another way to directly add the onupdate. Inspect the following part to see how.
+    </p>
+    <h2>Embedding the onupdate</h2>
+    <div>
+      let mySquare = new Entity({size: [20,20], color: "limegreen", onupdate: (e) => {...}})
+    </div>
+    <p>All you need to do is to put the inner of the function from the one higher and the result will be the same. It is way shorter this way and in some cases might look cleaner.</p>
+    <h2>Creating the scene containing the entity</h2>
+
+    <div>
+      let myScene = new Scene({children: [mySquare]})
+    </div>
+    <p>Just slap your entity which is in this case my square in an array and there you have it. mySquare is now inside the myScene.</p>
+    <h2>
+      Adding the scene to the game instance
+    </h2>
+    <div>
+      myGame.setScene(myScene)
+    </div>
+    <p>
+      Pretty easy right? By doing this, the scene that your game instance will render is myScene. One more step and we're done!
+    </p>
+    <h2>Kick start the game</h2>
+    <div>
+      myGame.play()
+    </div>
+    <p>
+      Your game is finished. All of that in only 12 lines of code! Good luck and have fun using it to make your dream pixelated games.
+    </p>
+
+    <h2>
+      Next: <a href="images.html">Images</a>
+  </h2>
+
+  <p>
+    Other: <a href="introduction.html">Introduction</a>, <a href="images.html">Images</a>, <a href="bounds.html">Bounds</a>,<a href="collisions.html">Collisions</a> 
+  </p>
+
+    <p>
+      View: <a href="../content.html">Contents</a>
+    </p>
+  </body>
+  <script src="../index.js"></script>
+    
+</body>
+</html>
